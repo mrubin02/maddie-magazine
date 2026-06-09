@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Maddie Magazine</title>
+  <meta name="description" content="About Maddie Magazine.">
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f3ede0;
+      --black: #1c1812;
+      --coral: #e0432b;
+      --gray: #7a7060;
+      --rule: 1px solid rgba(28, 24, 18, 0.3);
+      --rule-heavy: 2px solid #1c1812;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .eyebrow {
+      border-bottom: var(--rule);
+      padding: 0.4rem 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .eyebrow span {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--gray);
+    }
+
+    .masthead {
+      padding: 2.5rem 2rem 1.5rem;
+      text-align: center;
+      border-bottom: var(--rule-heavy);
+    }
+
+    .masthead-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .masthead-title .stop { color: var(--coral); font-style: normal; }
+
+    .masthead-sub {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--gray);
+      margin-top: 0.6rem;
+    }
+
+    nav {
+      border-bottom: var(--rule-heavy);
+      padding: 0.65rem 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    nav .tagline {
+      margin-left: auto;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      color: var(--gray);
+    }
+
+    /* ── PAGE ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .page-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--coral);
+      display: block;
+      padding-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 3rem;
+      border-bottom: var(--rule-heavy);
+      padding-bottom: 2rem;
+    }
+
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    /* ── PROSE ── */
+    .prose p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 1.4rem;
+    }
+
+    .prose p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.8rem;
+      font-weight: 500;
+      line-height: 0.8;
+      float: left;
+      margin: 0.05em 0.08em 0 0;
+      color: var(--coral);
+    }
+
+    .prose em { font-style: italic; }
+
+    .prose .sign-off {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--gray);
+      margin-top: 2rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    /* ── MASTHEAD TABLE ── */
+    .masthead-table {
+      margin-top: 3rem;
+      border-top: var(--rule-heavy);
+      padding-top: 1.5rem;
+    }
+
+    .masthead-table h2 {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .mrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: var(--rule);
+      padding: 0.65rem 0;
+      font-size: 0.95rem;
+    }
+
+    .mrow .role {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--gray);
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      border-left: var(--rule);
+      padding-left: 2rem;
+    }
+
+    .sidebar-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar-block h3 {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-block p,
+    .sidebar-block li {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--gray);
+    }
+
+    .sidebar-block ul { list-style: none; }
+
+    .sidebar hr {
+      border: none;
+      border-top: var(--rule);
+      margin: 2rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: var(--rule-heavy);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    footer .footer-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
+    footer .footer-name .stop { color: var(--coral); }
+
+    footer p {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      color: var(--gray);
+      line-height: 2;
+      margin-top: 0.4rem;
+    }
+
+    footer a:hover { color: var(--coral); }
+
+    footer nav {
+      border: none;
+      padding: 0;
+      gap: 0;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    footer nav a {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      font-style: normal;
+      letter-spacing: 0.05em;
+      color: var(--gray);
+      line-height: 2.2;
+    }
+
+    footer nav a:hover { color: var(--coral); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+      .sidebar { border-left: none; border-top: var(--rule-heavy); padding-left: 0; padding-top: 2rem; }
+      footer { flex-direction: column; }
+      footer nav { align-items: flex-start; }
+      nav .tagline { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="eyebrow">
+    <span>maddie-magazine.com</span>
+    <span>Vol. I, No. 1 &mdash; June 2026</span>
+  </div>
+
+  <header class="masthead">
+    <a href="/" style="text-decoration:none;">
+      <h1 class="masthead-title">Maddie<span class="stop">.</span></h1>
+    </a>
+    <p class="masthead-sub">A magazine. By Maddie. Est. 2026.</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/archive">Archive</a>
+    <a href="/subscribe">Subscribe</a>
+    <span class="tagline">Independent since 2026</span>
+  </nav>
+
+  <main class="container">
+
+    <span class="page-label">About</span>
+    <h2 class="page-title">A Letter From the Editor</h2>
+
+    <div class="two-col">
+
+      <article>
+        <div class="prose">
+          <p>
+            I started this magazine because I kept having opinions and nowhere particular to put them.
+            That is an embarrassing thing to admit. I am admitting it anyway.
+          </p>
+          <p>
+            The publications I actually read — the ones I steal from waiting rooms, the ones I look
+            up at 2am because someone mentioned them once — have a particular quality. They take things
+            seriously without being solemn about it. They are funny without being dismissive. They have
+            a <em>voice.</em> A voice that, when you encounter it, makes you feel like you are being
+            spoken to directly and slightly conspiratorially, by someone who has thought about this
+            more than you have but is not going to make that your problem.
+          </p>
+          <p>
+            I wanted to make something like that. Smaller, obviously. More personal, because everything
+            I make is more personal than it should probably be. Less authoritative, because I am one
+            person with strong opinions and a broadband connection, which is a dangerous combination
+            but also, historically, the condition under which most interesting things get written.
+          </p>
+          <p>
+            This magazine is about things I find interesting. Which includes: the specific emotional
+            texture of ordinary experiences that nobody has quite named yet; the way we talk about
+            ourselves, to each other and online; cultural phenomena that deserve more scrutiny than
+            they are currently receiving; cultural phenomena that are receiving too much scrutiny;
+            and the occasional piece I cannot justify on any grounds except that I really wanted to
+            write it.
+          </p>
+          <p>
+            I do not have a thesis. I have a sensibility. I have been told that is enough.
+            I am choosing to believe it.
+          </p>
+          <p>
+            Welcome to <em>Maddie Magazine.</em> I hope you find something worth keeping.
+          </p>
+
+          <div class="sign-off">
+            &mdash; Maddie Rubin<br>
+            Editor-in-Chief, Sole Contributor,<br>
+            Person Responsible for All of It
+          </div>
+        </div>
+
+        <div class="masthead-table">
+          <h2>Masthead</h2>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Editor-in-Chief</span></div>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Managing Editor</span></div>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Staff Writer</span></div>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Art Director</span></div>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Webmaster</span></div>
+          <div class="mrow"><span>Maddie Rubin</span><span class="role">Founder</span></div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <h3>The Magazine</h3>
+          <p>
+            Maddie Magazine<br>
+            Vol. I, No. 1<br>
+            Est. June 2026<br>
+            New York
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="sidebar-block">
+          <h3>Frequency</h3>
+          <p>
+            Whenever there is something worth saying. Which is, regrettably, quite often.
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="sidebar-block">
+          <h3>Submissions</h3>
+          <p>
+            Not currently open. This is a solo operation. Check back.
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="sidebar-block">
+          <h3>Influences</h3>
+          <ul>
+            <li>n+1</li>
+            <li>The Baffler</li>
+            <li>The Drift</li>
+            <li>The Whitney Review</li>
+            <li>Things read on the train</li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="sidebar-block">
+          <h3>Contact</h3>
+          <p><a href="https://maddie-rubin.com">maddie-rubin.com</a></p>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <div class="footer-name">Maddie<span class="stop">.</span></div>
+      <p>
+        A magazine for people who have<br>
+        opinions and the decency to edit them.<br>
+        <br>
+        <a href="https://maddie-rubin.com">maddie-rubin.com</a><br>
+        &copy; 2026 Maddie Magazine
+      </p>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/archive">Archive</a>
+      <a href="/subscribe">Subscribe</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
